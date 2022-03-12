@@ -11,5 +11,4 @@ app.use(express.json())
 // userRoutes, contains all the routes for the user functions.
 router.get('/all', cors(), controller.getAllIngredients);
 router.post('/insert', cors(), controller.postNewIngredient);
-
 module.exports = router;

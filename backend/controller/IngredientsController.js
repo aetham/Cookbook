@@ -1,7 +1,6 @@
 const pool = require("../configuration/database");
 
 exports.getAllIngredients = async (req, res, next) => {
-    console.log("dafuq")
     try {
         const getAllIngredients = await pool.query(
             "SELECT * FROM ingredients"
@@ -13,7 +12,6 @@ exports.getAllIngredients = async (req, res, next) => {
 };
 
 exports.postNewIngredient = async (req, res, next) => {
-    console.log(req.body)
     const { name, price, image, category, weight, weighttype} = req.body
         try {
         const postNewIngredient = await pool.query(

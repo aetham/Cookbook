@@ -12,15 +12,16 @@ exports.getAllRecipes = async (res) => {
 };
 
 exports.postNewRecipe = async (req, res, next) => {
-    const { id, name, price, description } = req.body;
-    try {
-        const NewRecipe = await pool.query(
-            "INSERT INTO recipes(id, name, price, description) VALUES($1, $2, $3, $4) RETURNING *",
-            [id, name, price, description]
-        );
-        return res.json({ NewRecipe });
-    } catch (err) {
-        console.error(err.message);
-    }
+    console.log(req.body)
+    // const { id, name, price, description } = req.body;
+    // try {
+    //     const NewRecipe = await pool.query(
+    //         "INSERT INTO recipes(id, name, price, description) VALUES($1, $2, $3, $4) RETURNING *",
+    //         [id, name, price, description]
+    //     );
+    //     return res.json({ NewRecipe });
+    // } catch (err) {
+    //     console.error(err.message);
+    // }
 };
 

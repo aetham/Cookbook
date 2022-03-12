@@ -7,7 +7,7 @@ export default class Footer extends Component {
   render() {
     return (
       <div>
-        <Navbar sticky="bottom" bg="dark" variant="dark" style={{ position: 'fixed', bottom: 0, width: "100%" }}>
+        <Navbar sticky="bottom" bg="dark" variant="dark" style={{ position: 'fixed', bottom: 0, width: "100%", paddingTop:'15px' }}>
           <Container>
             <Nav className="me-auto">
             </Nav>

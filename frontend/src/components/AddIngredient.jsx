@@ -37,14 +37,12 @@ export default class AddIngredient extends Component {
             weight: this.state.weight,
             weighttype: this.state.weighttype
         }
-        console.log(foodInformation)
         axios.post("http://localhost:4000/ingredients/insert/", foodInformation)
             .then(response => {
                 if (response.data != null) {
                     this.props.history.push('/food');
                 }
             });
-
             this.setState({ show: !this.state.show })
     }
 
@@ -90,7 +88,7 @@ export default class AddIngredient extends Component {
                         </Form.Select>
                         <Modal show={this.state.show}>
                             <Modal.Header> Food information</Modal.Header>
-                            <Modal.Body>Ü</Modal.Body>
+                            <Modal.Body>FIX THIS STUFF</Modal.Body>
                             <Button onClick={() => { this.submitInfo() }}>Submit</Button>
                         </Modal>
                         <Button variant="primary" type="button" onClick={this.getUserInfo.bind()}>Submit</Button>

@@ -76,9 +76,7 @@ export default class SignUp extends Component {
                             <Form.Control type="role" name="role" value={this.state.role} onChange={this.handleChange} placeholder="Type" />
                         </Form.Group>
 
-                        <Button variant="primary" type="button" onClick={this.submitUser.bind()}>
-                            Submit
-                        </Button>
+                        <Button variant="primary" type="button" onClick={this.submitUser.bind()}>Submit</Button>
                     </Form>
                 </Container>
             </div>
