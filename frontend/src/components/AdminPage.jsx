@@ -12,7 +12,8 @@ export default class AdminPage extends Component {
         <Container>
           <Navbar.Brand href="/admin/usertable">Admin Panel</Navbar.Brand>
           <Nav.Link href="/admin/usertable">Users</Nav.Link>
-          <Nav.Link href="/admin/articletable">Articles</Nav.Link>
+          <Nav.Link href="/admin/ingredientstable">Ingredients </Nav.Link>
+          <Nav.Link href="/admin/recipestable">Recipes </Nav.Link>
           <Nav.Link href="/" onClick={this.logOut}>Log out</Nav.Link>
         </Container>
       </Navbar>

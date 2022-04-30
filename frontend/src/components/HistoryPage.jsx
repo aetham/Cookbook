@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Container, Table, Button } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import '../App.css';
 
-export default class UserTable extends Component {
+export default class HistoryPage extends Component {
+    // Data requested from the backend API will be stored in the user array.
     constructor(props) {
         super(props);
         this.state = {
@@ -17,10 +18,14 @@ export default class UserTable extends Component {
         this.handlePageClick = this.handlePageClick.bind(this);
     }
     componentDidMount() {
-        axios.get("http://localhost:4000/users/getall")
+        var user = localStorage.getItem('email')
+        const userInfo = {
+            name: user
+        }
+        axios.post("http://localhost:4000/recipes/basket/gethistory", userInfo)
             .then(response => response.data)
             .then((data) => {
-                var test = data
+                var test = data.array
                 console.log(test)
                 var slice = test.slice(this.state.offset, this.state.offset + this.state.perPage)
                 console.log(slice)
@@ -50,40 +55,27 @@ export default class UserTable extends Component {
         })
     }
 
-    edit(path) {
-        this.props.history.push(path);
-    }
-
-    delete(usersId) {
-        axios.delete("http://localhost:4000/users/delete/" + usersId)
-        window.location.reload(false);
-    }
-
     render() {
         return (
             <Container>
-                <h1>User Page</h1>
-                <Table>
+                <h1>History Page</h1>
+                <Table >
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>First name</th>
-                            <th>Last name</th>
-                            <th>Email</th>
-                            <th>Role</th>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Price</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            this.state.info.map((info) => (
-                                <tr key={info.id}>
-                                    <td>{info.id}</td>
-                                    <td>{info.f_name}</td>
-                                    <td>{info.l_name}</td>
-                                    <td>{info.email}</td>
-                                    <td><Button variant="primary" style={{ marginLeft: '1rem', marginRight: '1rem' }} onClick={() => this.edit('/admin/edit/' + info.id)}>Edit</Button>
-                                        <Button variant="danger" onClick={() => this.delete(info.id)}>Delete</Button></td>
+                            this.state.info.map((info, index) => (
+                                <tr key={index}>
+                                    <td>{info.date}</td>
+                                    <td>{info.name}</td>
+                                    <td>{info.price}</td>
                                 </tr>
+
                             ))
                         }
                     </tbody>

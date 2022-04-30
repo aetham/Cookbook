@@ -13,7 +13,11 @@ import EditUser from './components/EditUser';
 import UserPage from './components/UserPage';
 import RecipesPage from './components/RecipesPage';
 import AddRecipes from './components/AddRecipes';
-import AddIngredient from './components/AddIngredient';
+import AddFood from './components/AddFood';
+import Basket from './components/Basket';
+import History from './components/HistoryPage'
+import IngredientsPage from './components/IngredientsPage';
+import AdminRecipes from './components/AdminRecipes';
 
 const AdminPath = '/admin';
 
@@ -43,7 +47,9 @@ const UserViews = () => {
       <Route path='/user' component={UserPage} />
       <Route exact path='/recipes/make' component={AddRecipes} />
       <Route exact path='/recipes' component={RecipesPage} />
-      <Route path='/food' component={AddIngredient} />
+      <Route path='/food' component={AddFood} />
+      <Route path='/basket' component={Basket} />
+      <Route path='/history' component={History} />
       <Footer />
     </React.Fragment> 
   );
@@ -56,6 +62,10 @@ const AdminViews = () => {
       <Route path={AdminPath} component={AdminPage} />
       <Route path='/admin/usertable' component={UserTable} />
       <Route path='/admin/edit/:id' component={EditUser} />
+      <Route path='/admin/ingredientstable' component={IngredientsPage} />
+      <Route path='/admin/recipestable' component={AdminRecipes} />
+
+
     </React.Fragment>
   );
 };

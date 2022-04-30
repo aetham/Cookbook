@@ -50,7 +50,7 @@ export default class LogIn extends Component {
         return (
             <div>
                 <Container>
-                    <Form onSubmit={this.submitUser} id="userFormId">
+                    <Form onSubmit={this.submitUser} id="userFormId" style={{marginTop:'1rem'}}>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Enter email" />
@@ -59,7 +59,7 @@ export default class LogIn extends Component {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
                         </Form.Group>
-                        <Button variant="primary" type="button" onClick={this.submitUser.bind()}>
+                        <Button variant="primary" type="button" onClick={this.submitUser.bind()} style={{marginTop:'1rem'}}>
                             Login
                         </Button>
                     </Form>

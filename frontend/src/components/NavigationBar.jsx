@@ -33,8 +33,9 @@ export default class NavigationBar extends Component {
               {loggedIn ?
                 <Nav>
                   <Nav.Link href="/recipes">My recipes</Nav.Link>
-                  <Nav.Link href="/planner">Planner</Nav.Link>
+                  <Nav.Link href="/basket">Basket</Nav.Link>
                   <Nav.Link href="/food">Add food</Nav.Link>
+                  <Nav.Link href="/history">History</Nav.Link>
                   <Navbar.Text>
                     Welcome back: <a>{email}</a>
                   </Navbar.Text>

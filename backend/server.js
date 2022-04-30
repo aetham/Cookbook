@@ -4,6 +4,7 @@ const pool = require("./configuration/database");
 const users = require("./routes/UserRoutes");
 const recipes = require("./routes/RecipesRoutes");
 const ingredients = require("./routes/IngredientsRoutes");
+const { json } = require("express");
 
 const app = express();
 const port = process.env.PORT || 4000;
