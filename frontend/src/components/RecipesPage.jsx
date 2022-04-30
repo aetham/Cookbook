@@ -87,12 +87,12 @@ export default class RecipesPage extends Component {
     render() {
         return (
             <div>
-                <h1>Recipes Page</h1>
-                <Button variant="primary" onClick={this.goTo}>Make a recipe!</Button>
                 <Container style={{ paddingBottom: '75px' }}>
+                <h2 style={{ textAlign: 'left', paddingTop: '2rem', paddingBottom: '1rem', }}>Recipes page</h2>
+                <Button variant="primary" onClick={this.goTo} style={{ marginRight:'72rem'}}>Make a recipe!</Button>
                     <Row>
                         <Col xs={6} md={4}>
-                            <h1>Recipies names</h1>
+                            <h4 style={{ paddingTop: '2rem', paddingBottom: '1rem', alignSelf: 'flex-end' }}>Recipies names</h4>
                             <Form className="d-flex" style={{ paddingBottom: '15px' }}>
                                 <FormControl
                                     type="search"
@@ -124,10 +124,10 @@ export default class RecipesPage extends Component {
                             </Card>
                         </Col>
                         <Col xs={12} md={8}>
-                            <h1>Recipe</h1>
+                            <h2 style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>Recipe</h2>
                             <Container style={{ borderStyle: 'solid', borderColor: 'gray', width: '35rem', marginLeft: '10rem' }}>
                                 <Form onSubmit={this.submitUser} id="userFormId">
-                                    <Button variant="primary" type="button" onClick={() => this.addTobasket()} >Add to basket</Button>
+                                    <Button variant="primary" type="button" style={{ marginRight:'20rem', marginTop:'1rem', marginBottom:'1rem'}} onClick={() => this.addTobasket() } >Add to basket</Button>
                                     <Container>
                                         {
                                             this.state.holding.map((holding, index) => (

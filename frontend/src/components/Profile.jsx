@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import axios from 'axios';
 export default class Profile extends Component {
-    // Data requested from the backend API will be stored in the user array.
     constructor(props) {
         super(props);
         this.state = {
@@ -10,7 +9,6 @@ export default class Profile extends Component {
         }
         this.submitEdit = this.submitEdit.bind(this);
         this.userChange = this.userChange.bind(this);
-
     }
     componentDidMount() {
         let getemail = localStorage.getItem("email")
@@ -20,7 +18,7 @@ export default class Profile extends Component {
                 this.setState({ user: data });
             })
     }
-    // Method to save the user input onto previously made this.state variables.
+
     submitEdit = () => {
         const loggedInUser = {
             f_name: this.state.f_name,
@@ -28,8 +26,7 @@ export default class Profile extends Component {
             email: this.state.email,
             password: this.state.password,
         }
-        // Using axios we will pass on needed information to update user information in database.
-        // this.props.match.params.id contains the id of the user and loggedInUser contains user inserted data.
+
         axios.put("http://localhost:4000/user/edit/" + this.props.match.params.id, loggedInUser)
             .then(response => {
                 if (response.data != null) {
@@ -37,9 +34,6 @@ export default class Profile extends Component {
                 }
             });
     }
-    // Method which constantly targets the values that are in the Form.
-    // With this method we can read values written in the form.
-    // I have also used Bind in the constructor to bind user values into state variables.
     userChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -70,8 +64,8 @@ export default class Profile extends Component {
                                 </Form.Group>
 
                                 <Form.Group controlId="formBasicPassword">
-                                    <Form.Label>User password</Form.Label>
-                                    <Form.Control type="password" name="password" value={password} onChange={this.userChange} placeholder={user.password} />
+                                    <Form.Label>Change password</Form.Label>
+                                    <Form.Control type="password" name="password" value={password} onChange={this.userChange} placeholder='Enter a New password' />
                                 </Form.Group>
                                 <Button variant="primary" type="button" onClick={this.submitEdit.bind()}>Submit</Button>
                             </Form>

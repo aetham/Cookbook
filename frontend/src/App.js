@@ -50,6 +50,7 @@ const UserViews = () => {
       <Route path='/food' component={AddFood} />
       <Route path='/basket' component={Basket} />
       <Route path='/history' component={History} />
+      <Route path='/user' component={LandingPage} />
       <Footer />
     </React.Fragment> 
   );

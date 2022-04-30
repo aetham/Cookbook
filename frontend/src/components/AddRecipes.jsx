@@ -63,7 +63,6 @@ export default class AddRecipes extends Component {
             secondprice: secondMaxPrice
         }
         axios.post("http://localhost:4000/recipes/newrecipe/", information)
-        window.location.reload(false);
     }
 
     search() {
@@ -83,11 +82,11 @@ export default class AddRecipes extends Component {
     render() {
         return (
             <div>
-                <h1>Make a recipe</h1>
                 <Container style={{ paddingBottom: '75px' }}>
+                    <h2 style={{ textAlign: 'left', paddingTop: '2rem', paddingBottom: '1rem' }}>Make a recipe page</h2>
                     <Row>
                         <Col xs={6} md={4}>
-                            <h1>Ingredient name</h1>
+                            <h4 style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>Ingredient name</h4>
                             <Form className="d-flex" style={{ paddingBottom: '15px' }}>
                                 <FormControl
                                     type="search"
@@ -118,10 +117,10 @@ export default class AddRecipes extends Component {
                             </Card>
                         </Col>
                         <Col xs={12} md={8}>
-                            <h1>Recipe</h1>
+                            <h4 style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>Recipe</h4>
                             <Container style={{ borderStyle: 'solid', borderColor: 'gray', width: '35rem', marginLeft: '10rem' }}>
                                 <Form onSubmit={this.submitUser} id="userFormId">
-                                    <Button variant="primary" type="button" onClick={() => this.saveToDatabase()} >Add Recipe</Button>
+                                    <Button variant="primary" type="button" style={{ marginRight:'24.9rem', marginTop:'1rem', marginBottom:'1rem'}} onClick={() => this.saveToDatabase()} >Add Recipe</Button>
                                     <Form.Group controlId="formBasicName">
                                         <Form.Label>Recipe name</Form.Label>
                                         <Form.Control
@@ -131,7 +130,6 @@ export default class AddRecipes extends Component {
                                             onChange={this.handleChange}
                                             placeholder="E.g. Pancakes" />
                                     </Form.Group>
-
                                     <Form.Group controlId="formBasicrecipeDescription">
                                         <Form.Label>How to make a Recipe</Form.Label>
                                         <Form.Control

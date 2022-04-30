@@ -51,9 +51,8 @@ export default class Basket extends Component {
     render() {
         return (
             <div>
-                <h1>Welcome to basket page</h1>
                 <Container>
-                    <h4>Components list</h4>
+                    <h2 style={{ textAlign: 'left', paddingTop: '2rem', paddingBottom: '1rem' }}>Basket Page</h2>
                     <Table>
                         <thead>
                             <tr>

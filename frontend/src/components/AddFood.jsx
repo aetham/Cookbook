@@ -56,6 +56,7 @@ export default class AddIngredient extends Component {
         return (
             <div>
                 <Container>
+                    <h2 style={{ textAlign: 'left', paddingTop: '2rem', paddingBottom: '1rem' }}>Add food Page</h2>
                     <Form onSubmit={this.getUserInfo} id="userFormName">
                         <Form.Group controlId="formBasicspecial">
                             <Form.Label>Coop </Form.Label>
@@ -66,11 +67,11 @@ export default class AddIngredient extends Component {
                             <Form.Control name="prisma" value={this.state.prisma} onChange={this.handleChange} placeholder="Enter price" />
                         </Form.Group>
                         <Form.Group controlId="formBasicWeight">
-                            <Form.Label>weight </Form.Label>
+                            <Form.Label>Weight </Form.Label>
                             <Form.Control name="weight" value={this.state.weight} onChange={this.handleChange} placeholder="Enter weight" />
                         </Form.Group>
-                        <Form.Select aria-label="Default select example" value={this.state.weighttype} onChange={this.specialhandleChange}>
-                            <option>Open this select menu</option>
+                        <Form.Select aria-label="Default select example" value={this.state.weighttype} onChange={this.specialhandleChange} style={{ marginTop: '2rem' }}>
+                            <option>Select weight type</option>
                             <option value="kg">Kg</option>
                             <option value="gram">Gram</option>
                             <option value="full unit">Full unit</option>

@@ -5,9 +5,6 @@ export default class UserPage extends Component {
     render() {
         return (
             <div>
-                <Container>
-                    <h1>Landing page</h1>
-                </Container>
             </div>
         );
     }
