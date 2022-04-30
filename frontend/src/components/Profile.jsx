@@ -44,8 +44,8 @@ export default class Profile extends Component {
         const { f_name, l_name, email, password } = this.state.user;
         return (
             <div>
-                <h1>Profile</h1>
                 <Container>
+                    <h2 style={{ textAlign: 'left', paddingTop: '2rem', paddingBottom: '1rem' }}>Profile Page</h2>
                     {
                         this.state.user.map((user) => (
                             <Form onSubmit={this.submitEdit} id="userFormId">

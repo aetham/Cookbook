@@ -2,7 +2,6 @@ import { Container, Navbar, Nav } from 'react-bootstrap'
 import React, { Component } from "react";
 
 export default class AdminPage extends Component {
-  // On logout button click, clear local storage from all data.
   logOut = () => {
     localStorage.clear();
   };

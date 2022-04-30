@@ -62,7 +62,7 @@ export default class UserTable extends Component {
     render() {
         return (
             <Container>
-                <h1>User Page</h1>
+                    <h2 style={{ textAlign: 'left', paddingTop: '2rem', paddingBottom: '1rem' }}>Users Page</h2>
                 <Table>
                     <thead>
                         <tr>

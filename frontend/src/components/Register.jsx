@@ -35,7 +35,8 @@ export default class SignUp extends Component {
         return (
             <div>
                 <Container>
-                    <Form onSubmit={this.submitUser} id="userFormId" style={{marginTop:'1rem'}}>
+                    <h2 style={{ textAlign: 'left', paddingTop: '2rem', paddingBottom: '1rem' }}>Registration Page</h2>
+                    <Form onSubmit={this.submitUser} id="userFormId" style={{ marginTop: '1rem' }}>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Enter email" />
@@ -61,7 +62,7 @@ export default class SignUp extends Component {
                             <Form.Control type="role" name="role" value={this.state.role} onChange={this.handleChange} placeholder="Type" />
                         </Form.Group>
 
-                        <Button variant="primary" type="button" onClick={this.submitUser.bind()} style={{marginTop:'1rem'}} >Submit</Button >
+                        <Button variant="primary" type="button" onClick={this.submitUser.bind()} style={{ marginTop: '1rem' }} >Submit</Button >
                     </Form>
                 </Container>
             </div>

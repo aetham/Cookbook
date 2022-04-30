@@ -56,7 +56,6 @@ export default class Basket extends Component {
                     <Table>
                         <thead>
                             <tr>
-                                <th>Picture</th>
                                 <th>Product name</th>
                                 <th>Category</th>
                                 <th>Coop</th>
@@ -66,7 +65,6 @@ export default class Basket extends Component {
                         <tbody>
                             {this.state.cart.map((cart, index) => (
                                 <tr key={index} style={{ margin: '10px' }}>
-                                    <td>{cart.id}</td>
                                     <td>{cart.name}</td>
                                     <td>{cart.category}</td>
                                     <td>{cart.price}</td>

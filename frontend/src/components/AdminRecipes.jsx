@@ -53,13 +53,14 @@ export default class AdminRecipes extends Component {
     render() {
         return (
             <Container>
-                <h1>History Page</h1>
+                    <h2 style={{ textAlign: 'left', paddingTop: '2rem', paddingBottom: '1rem' }}>Recipes Page</h2>
                 <Table >
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Price</th>
+                            <th>Coop price</th>
+                            <th>Prisma price</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -70,6 +71,7 @@ export default class AdminRecipes extends Component {
                                     <td>{info.id}</td>
                                     <td>{info.name}</td>
                                     <td>{info.price}</td>
+                                    <td>{info.secondprice}</td>
                                     <td><Button variant="primary" style={{ marginLeft: '1rem', marginRight: '1rem' }} >Edit</Button>
                                         <Button variant="danger">Delete</Button></td>
                                 </tr>

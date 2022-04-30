@@ -53,7 +53,7 @@ export default class IngredientsPage extends Component {
     render() {
         return (
             <Container>
-                <h1>History Page</h1>
+                    <h2 style={{ textAlign: 'left', paddingTop: '2rem', paddingBottom: '1rem' }}>Ingredients Page</h2>
                 <Table >
                     <thead>
                         <tr>
